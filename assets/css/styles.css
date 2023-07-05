@@ -1,0 +1,593 @@
+/* =============== VARIABLE CSS ===============*/
+:root {
+	--header-height: 3.5rem;
+
+	/* ======== COLORS ======= */
+	--first-color: hsl(228, 66%, 53%);
+	--first-color-alt: hsl(228, 66%, 47%);
+	--first-color-light: hsl(228, 62%, 59%);
+	--first-color-lighten: hsl(228, 100%, 97%);
+	--body-color: #fff;
+	--container-color: #fff;
+	--border-color: hsl(228, 99%, 98%);
+	--second-color: hsl(25, 83%, 53%);
+	--title-color: hsl(228, 57%, 28%);
+	--text-color: hsl(228, 15%, 50%);
+	--text-color-light: hsl(228, 12%, 75%);
+	--button-n-container-color: linear-gradient(
+		101deg,
+		hsl(228, 66%, 53%),
+		hsl(228, 66%, 47%)
+	);
+	--button-n-container-color-alt: linear-gradient(
+		101deg,
+		hsl(228, 66%, 47%),
+		hsl(228, 66%, 53%)
+	);
+
+	/* ========== Fonts and Typography ========== */
+	
+	--body-font: "Montserrat", sans-serif;
+	--title-font: "RussoOne", sans-serif;
+	--biggest-font-size: 2.25rem;
+	--h1-font-size: 1.5rem;
+	--h2-font-size: 1.25rem;
+	--h3-font-size: 1rem;
+	--normal-font-size: 0.938rem;
+	--small-font-size: 0.813rem;
+	--smaller-font-size: 0.75rem;
+
+	/* ========== Fonts Weight ========== */
+	--font-medium: 500;
+	--font-semi-bold: 600;
+
+	/* ========== Z Index ========== */
+	--z-tooltip: 10;
+	--z-fixed: 100;
+}
+
+/* Responsive Typography */
+@media screen and (min-width: 1024px) {
+	:root {
+		--biggest-font-size: 3rem;
+		--h1-font-size: 2.25rem;
+		--h2-font-size: 2rem;
+		--h3-font-size: 1.25rem;
+		--normal-font-size: 1rem;
+		--small-font-size: 0.875rem;
+		--smaller-font-size: 0.813rem;
+	}
+}
+
+/* ============ BASE STYLING ============ */
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	font-family: var(--body-font);
+	font-size: var(--normal-font-size);
+	background-color: rgb(235, 231, 231);
+	color: var(--text-color);
+	transition: 0.3s;
+}
+
+h1,
+h2,
+h3 {
+	color: var(--title-color);
+	font-weight: normal;
+}
+
+ul {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+img,
+video {
+	max-width: 100%;
+	height: auto;
+}
+
+input,
+button {
+	font-family: var(--body-font);
+	border: none;
+	outline: none;
+}
+
+/* ============== THEME ============== */
+/*========== Button Dark/Light ==========*/
+
+/* ========= Dark theme variables =========== */
+
+/* ======== Color changes in some aspects on dark theme ======== */
+
+/* ============== REUSABLE CSS CLASSES ============== */
+.container {
+	max-width: 1024px;
+	margin-left: 1.5rem;
+	margin-right: 1.5rem;
+}
+
+.grid {
+	display: grid;
+}
+
+.section {
+	padding: 4.5rem 0 2rem;
+}
+
+.section__title {
+	font-size: var(--h2-font-size);
+	margin-bottom: 1rem;
+	font-family: var(--title-font);
+}
+
+.section__title span {
+	color: var(--second-color);
+}
+
+.main {
+	overflow: hidden;
+}
+
+/* ============= HEADER SECTION ============= */
+.header {
+	width: 100%;
+	background-color: transparent;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: var(--z-fixed);
+}
+
+.nav {
+	height: var(--header-height);
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.nav__logo,
+.nav__toggle {
+	/*color: #fff;*/
+}
+
+.nav__logo {
+	font-family: var(--title-font);
+	font-size: var(--normal-font-size);
+	line-height: 1;
+	font-weight: normal;
+	display: flex;
+	align-items: center;
+}
+
+.nav__logo img {
+	margin-right: 0.3rem;
+}
+
+.nav__toggle {
+	font-size: 1.2rem;
+	cursor: pointer;
+}
+
+.nav__menu {
+	position: relative;
+}
+
+
+
+@media screen and (max-width: 767px) {
+
+	/*========== SEARCH BOX ====================*/
+
+	.search-box {
+		width: 350px;
+		background: #fff;
+		margin: 55px auto 0;
+		border-radius: 5px;
+	}
+	
+	.row {
+		display: flex;
+		align-items: center;
+		padding: 1px 5px;
+	}
+	
+	input {
+		flex: 1;
+		height: 20px;
+		background: transparent;
+		border: 0;
+		outline: 0;
+		font-size: 18px;
+		color: #333;
+	}
+
+	button {
+		background: transparent;
+		border: 0;
+		outline: 0;
+		padding-top: 5px;
+	}
+
+	button img{
+		width: 25px;
+		color: #555;
+		font-size: 22px;
+		cursor: pointer;
+	}
+
+	::placeholder{
+		color: #555;
+	}
+
+	.result-box ul {
+		border-top: 1px solid #999;
+		padding: 15px 10px;
+	}
+
+	.result-box ul li {
+		list-style: none;
+		border-radius: 3px;
+		padding: 15px 10px;
+		cursor: pointer;
+	}
+
+	.result-box ul li:hover {
+		background: #e9f3ff;
+	}
+  /*-----------------------------------------------*/
+
+	.nav__menu {
+		position: fixed;
+		background-color: hsla(0, 0%, 8%, 0.127);
+		backdrop-filter: blur(5px);
+		-webkit-backdrop-filter: blur(5px);
+		top: 0;
+		right: -100%;
+		width: 100%;
+		height: 100%;
+		transition: 0.4s;
+		z-index: 3;
+	}
+
+	.nav__list {
+		position: absolute;
+		padding: 6rem 0 0 3rem;
+		top: 0;
+		right: 0;
+		width: 70%;
+		height: 100%;
+		background-color: var(--body-color);
+		box-shadow: -1px 0 4px rgba(14, 55, 63, 0.15);
+	}
+	
+}
+
+.nav__list {
+	display: flex;
+	flex-direction: column;
+	row-gap: 3rem;
+}
+
+.nav__link {
+	color: var(--text-color);
+	font-weight: var(--font-semi-bold);
+	text-transform: uppercase;
+	transition: 0.2s;
+}
+
+.nav__link:hover {
+	color: var(--title-color);
+}
+
+.nav__close {
+	position: absolute;
+	top: 0.75rem;
+	right: 1.5rem;
+	font-size: 1.5rem;
+	color: var(--title-color);
+	cursor: pointer;
+}
+/* show menu */
+.show-menu {
+	right: 0;
+}
+
+/* Change background header */
+
+/* Active link */
+/*.active-link {
+	position: relative;
+	color: var(--title-color);  (WHEN SCROL ON MOBILE MENU THE ORANGE BAR MOVES TO THE PAGE)
+}*/
+
+.active-link::before {
+	content: "";
+	position: absolute;
+	background-color: var(--second-color);
+	width: 100%;
+	height: 2px;
+	bottom: -0.75;
+	left: 0;
+}
+
+/* ============ HOME SECTION ============ */
+
+/* =========== BRANDS SECTION ============ */
+
+/* ========== PRODUCT SECTION =========== */
+
+/* ============ WHY SECTION =========== */
+
+/* Rotate Arrow when header is clicked */
+
+/*=============== VIDEO SECTION ===============*/
+
+/* ========== CONTACT SECTION =========== */
+
+/* =========== SUBSCRIBE SECTION ============= */
+
+/* =========== FOOTER SECTION =========== */
+
+
+.footer__container {
+	row-gap: 2.5rem;
+}
+
+.footer__logo {
+	font-family: var(--title-font);
+	font-size: var(--normal-font-size);
+	line-height: 1;
+	font-weight: normal;
+	color: var(--first-color);
+	display: flex;
+	align-items: center;
+	margin-bottom: 0.5rem;
+}
+
+.footer__logo img {
+	margin-right: 0.3rem;
+}
+
+.footer__description,
+.footer__link {
+	font-size: var(--small-font-size);
+	font-weight: var(--font-medium);
+}
+
+.footer__content,
+.footer__links {
+	display: grid;
+}
+
+.footer__content {
+	grid-template-columns: repeat(2, max-content);
+	gap: 2.5rem 4rem;
+}
+
+.footer__title {
+	font-size: var(--h3-font-size);
+	margin-bottom: 1rem;
+	font-weight: var(--font-semi-bold);
+}
+
+.footer__title span {
+	color: var(--second-color);
+}
+
+.footer__links {
+	row-gap: 0.5rem;
+}
+
+.footer__link {
+	color: var(--text-color);
+	transition: 0.3s;
+	display: inline-flex;
+}
+
+.footer__link:hover {
+	color: var(--second-color);
+	transform: translateX(5px);
+}
+
+.footer__socials {
+	display: flex;
+	column-gap: 1rem;
+}
+
+.footer__social-link {
+	font-size: var(--small-font-size);
+	color: var(--text-color);
+	transition: 0.3s;
+}
+
+.footer__social-link:hover {
+	color: var(--title-color);
+}
+
+.footer__info, 
+.footer__privacy {
+	display: flex;
+}
+
+.footer__info {
+	padding-bottom: 6rem;
+	margin-top: 5.5rem;
+	flex-direction: column;
+	text-align: center;
+	row-gap: 1.5rem;
+}
+
+.footer__copy, .footer__privacy a {
+	font-size: var(--smaller-font-size);
+	font-weight: var(--font-medium);
+	color: var(--text-color);
+}
+
+.footer__privacy {
+	justify-content: center;
+	column-gap: 1.25rem;
+}
+/* ========= SCROLL UP =========== */
+
+/* Show Scroll */
+
+/* =========== SCROLL BAR =========== */
+::-webkit-scrollbar {
+	width: 0.6rem;
+	border-radius: 0.5rem;
+	background-color: hsl(228, 8%, 76%);
+}
+
+::-webkit-scrollbar-thumb {
+	background-color: hsl(228, 8%, 64%);
+	border-radius: 0.5rem;
+}
+
+::-webkit-scrollbar-thumb:hover{
+	background-color: hsl(0, 8%, 54%);
+}
+
+/* ============== BREAKPOINTS ============== */
+@media screen and (max-width: 350px) {
+	.container {
+		margin-left: 1rem;
+		margin-right: 1rem;
+	}	
+}
+/* For smaller devices */
+
+@media screen and (max-width: 320px) {
+	.nav__list {
+		padding-left: 1rem;
+		width: 75%;
+	}
+
+	.footer__content {
+		gap: 2.5rem;
+	}
+}
+
+@media screen and (min-width: 568px) {
+	
+	.footer__content {
+		grid-template-columns: repeat(3, max-content);
+	}
+
+	.footer__logo {
+		font-size: var(--h2-font-size);
+		margin-bottom: 1rem;
+	}
+}
+/* for large devices */
+
+@media screen and (min-width: 767px){
+	.section {
+		padding: 7rem 0 2 rem;
+	}
+
+	.nav {
+		height: calc(var(--header-height) + 1.5rem);
+	}
+
+	.nav__link {
+		font-size: var(--normal-font-size);
+		color: hsl(228, 12%, 83%);
+		text-transform: capitalize;
+	}
+
+	.nav__link:hover {
+		color: #fff;
+	}
+
+	.nav__menu {
+		display: flex;
+		column-gap: 1rem;
+	}
+
+	.nav__list {
+		flex-direction: row;
+		column-gap: 3.5rem;
+	}
+
+	.nav__toggle,
+	.nav__close {
+		display: none;
+	}
+
+	.footer__container {
+		grid-template-columns: repeat(2, max-content);
+		justify-content: space-between;
+	}
+}
+
+@media screen and (min-width: 1023px){
+	.section {
+		padding: 7.5rem 0 1rem;
+	}
+
+	.container {
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.footer__content {
+		grid-template-columns: repeat(4, max-content);
+	}
+
+	.footer__title {
+		margin-bottom: 1.5rem;
+	}
+	
+	.footer__links {
+		row-gap: 1rem;
+	}
+
+	.footer__info {
+		flex-direction: row;
+		justify-content: space-between;
+		padding-bottom: 2rem;
+	}
+
+}
+
+@media screen and (min-width: 1200px){
+	
+}
+/* Alternative code for larger screens */
+
+@media screen and (min-width: 1700px){
+	.home {
+		max-width: 1400px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
+
+/* For 2k and 4k resolution */
+
+@media screen and (min-width: 2048px){
+	body {
+		zoom: 1.5;
+	}
+}
+
+/* For 2k and 4k resolution */
+@media screen and (min-width: 3840px){
+	body {
+		zoom: 2;
+	}
+}
